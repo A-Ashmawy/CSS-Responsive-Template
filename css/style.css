@@ -1,0 +1,472 @@
+/*---------- Global Rules------------- */
+*{
+    outline:0;
+    border: 0;
+    margin:0;
+    padding: 0;
+    /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
+    box-sizing: border-box;
+    /* border:1px solid green; */
+}
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+ul{
+    list-style:none;
+}
+
+
+h1,h2,h3,h4{
+    line-height: 1.2;
+    margin:0 0 1rem 0; 
+}
+h1{ font-size: 2.4rem;}
+h2{ font-size: 2.0rem;}
+h3{ font-size: 1.6rem;}
+h4{ font-size: 1.3rem;}
+p{margin:0 0 2rem 0;}
+body{
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    text-transform: capitalize;
+    color:var(--white);
+    background-color: var(--color-bg);
+    margin:0;
+    position:absolute;
+    
+}
+.container{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+section {
+    padding :6rem 0 ;
+}
+section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+img{
+    width:100%;
+    /* height: 100%; */
+    display: block;
+    object-fit:cover;
+}
+.btn{
+    display: inline-block;
+    color:var(--black);
+    background-color: var(--white);
+    font-weight: 500;
+    padding:2rem 1rem;
+    border:1px solid transparent;
+    transition:var(--transition);
+    border-radius: 10px;
+
+}
+.btn:hover{
+    color: var(--white);
+    background: transparent;
+    border-color: var(--white);
+}
+.btn-primary{
+    background: var(--color-danger);
+    color:var(--white);
+}
+/* ----------end of Global Rules------ */
+/* --------------liked root----------- */
+:root{
+    --color-primary:#6c63ff;
+
+    --color-success:#00bf8e;
+    --color-warning:#f7c94b;
+    --color-danger:#f75842;
+
+    --white:#fff;
+    --black:#000;
+    --light:rgba(255,255,255,0.7);
+
+    --color-bg:#1f2641;
+    --color-bg1:#2e3267;
+    --color-bg2:#424890;
+
+    --container-lg:92%;
+    --container-md:90%;
+    --container-sm:94%;
+
+    --transition:all 400ms ease;
+}
+/*------------ start nav---------------------*/
+nav{
+    background-color:rgb(98, 7, 7);
+    width:100%;
+    /* = width:100% */
+    height: 5rem;
+    /* 5REM*16PX=80PX */
+
+    position: sticky;
+    top:0;
+    /* why?????????? */
+    z-index:2;
+    padding:.5rem 0;
+}
+/* =======change using js */
+.wscroll{
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+}
+nav .container {
+    height: 100%;
+    /* NOT EQUAL 100VH HEIGHT OF WINDOW */
+    /* whyyyyyyyyy 
+    to sure items in center container and nav */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav .container .logo {
+    /* border:2px solid green; */
+
+}
+nav .container .logo a{
+
+    text-transform: uppercase;
+    height: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+nav .container .logo a img{
+    width:40px ;
+    height: 22%;
+}
+
+
+nav .container button{
+    display: none;
+    /* in large screens */
+}
+/* menu */
+nav .container ul{
+    display: flex;
+    justify-content: space-between;
+    gap:4rem;
+
+}
+
+nav .container ul li{
+    /* gap instead */
+    /* margin-left: 30px; */
+}
+
+nav .container ul li a {
+    transition:var(--transition);
+    /* transition: 3s ease; */
+    font-size: 0.8rem;
+}
+nav .container ul li a:hover{
+    color: var(--color-bg2);
+}
+/* end menu */
+/*------------ end nav---------------------*/
+/*------------ start header ---------------------*/
+.header {
+    padding-top:5rem ;
+    padding-bottom:5rem ;
+    overflow: hidden;
+}
+.header .container {
+    display:grid;
+    grid-template-columns: calc(45% - 5px) calc(55% - 5px);
+    gap: 10px;
+    align-items: center;
+   
+}
+
+.header .container .header-right .img img{
+    width:100%;
+
+}
+.header .container .header-right .img{
+    
+    width:350px;
+}
+.header .container .header-right {
+    display: flex;
+    justify-content: center;
+}
+/* category */
+.category{
+    background-color: var(--color-bg2);
+    padding-top:5rem  ;
+    height: 40rem;
+    width: 100%;
+
+}
+.category .container{
+    display: grid;
+    /* grid-template-columns: 45% 55%; */
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    
+}
+/* category */
+.category .container .container-left {
+    margin-top:calc( 40rem / 2 - 5rem - 350px /2 ) ;
+    display: flex;
+    flex-direction:column;
+    height: 350px;
+
+    /* شلت البادينج ونص ارتفاع الهيدر من نص ارتفاع العنصر */
+    
+    
+    /* width:80%; */
+    
+
+}
+.category .container .container-left p{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    /* line-height: 1; */
+    height:200px ;
+}
+.category .container .container-right{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:1rem;
+}
+.category .container .container-right .category-box{
+    background-color: var(--color-bg1);
+    padding: 1rem;
+    border-radius: 1rem;
+    
+}
+/* ---------- icon ------- */
+.category .container .container-right .category-box .icon{
+
+    font-size: 50px;
+    /* عشان اعرف اسنترها */
+    /* /* display: block; */
+    margin-bottom:20px;
+}
+.category .container .container-right .category-box:nth-child(2) i{
+    color: var(--color-danger);
+}
+.category .container .container-right .category-box:nth-child(3) i{
+    color: var(--color-success);
+}
+.category .container .container-right .category-box:nth-child(4) i{
+    color: var(--color-warning);
+}
+.category .container .container-right .category-box:nth-child(5) i{
+    color: var(--color-success);
+}
+/* -------------------- */
+
+.category .container .container-right .category-box span{
+    font-size: 2rem;
+}
+.category .container .container-right .category-box p{
+    margin-top:2px;
+    margin-bottom: 0;
+    /* line-height: 1.2; */
+}
+/* ======================= */
+/* ========courses================= */
+.courses{
+    margin-top: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.courses .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:20px;
+    
+
+}
+.courses .container .course{
+    background-color: var(--color-bg2);
+    border:1px solid transparent;
+    transition:var(--transition);
+    /* border-bottom-right-radius: 40px ;
+    border-bottom-left-radius: 40px ; */
+    
+    
+    
+}
+.courses .container .course:hover{
+    background-color: transparent;
+    border:1px solid var(--color-bg2);
+}
+.courses .container .course .text{
+    padding:20px 20px 20px 20px;
+    text-align: center;
+    
+}
+.courses .container .course .text h3{
+    font-weight: 200;
+    padding: 0 10px;
+}
+.courses .container .course .text p{
+    font-size: .9rem;
+}
+.courses .container .img{
+    /* width:250px; */
+    height:200px;
+}
+.courses .container .img img{
+    /* width:250px; */
+    height:100%;
+}
+
+
+/* ========end courses============= */
+.faqs{
+    background-color:var(--color-bg1) ;
+    box-shadow: inset 0 0 3rem rgba(0,0,0,.3) ;
+}
+.faqs .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.faqs .container .faq-box{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    background-color: var(--color-primary);
+    padding:20px;
+    /* لو مكتبتهاش الكونتنت اللي جمبه هيملا معاه  */
+    height: fit-content;
+    cursor: pointer;
+}
+
+.faqs .container .faq-box .icon{
+    padding:5px 20px 0px 0px;
+    /* escape from align center to be on the flex start */
+    align-self: flex-start;
+    font-size: 20px;
+}
+.faqs .container .faq-box .answer{
+}
+.faqs .container .faq-box .answer h3{
+    /* font-size: 1rem; */
+}
+.faqs .container .faq-box .answer p{
+    display: none;
+}
+
+/* 
+.faqs .container .faq-box  .answer:hover p{
+    display: block;
+} */
+
+.faqs .container .open .answer p{
+    display: block;
+}
+/* ====================== */
+.testimonals{
+    margin-top: 4rem;
+}
+.testimonals .container{
+    text-align: center;
+}
+.testimonals .container .testimonal .img {
+    border-radius: 50%;
+    /* تلتزم بشكل الديف اللي هي جواه */
+    overflow: hidden;
+    height:100px;
+    width:100px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border:.7rem solid var(--color-bg2);
+}
+
+.testimonals .container .testimonal .info{
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.testimonals .container .testimonal .testimonal-box{
+    background-color: var(--color-bg2);
+    position: relative;
+    
+}
+:root{
+    --border-width:40px;
+    --border-color:linear-gradient(transparent,var(--color-primary),var(--color-primary) )
+}
+/* .testimonals .container .testimonal .testimonal-box::before{
+    content: "";
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color:transparent transparent linear-gradient(#e66465, #9198e5) transparent;
+    position:absolute;
+    left:50%;
+    top:calc(-2 * var(--border-width)  + 1px );
+    transform:translate(-50%,0) ;
+    transform: rotate(45deg); 
+}*/
+/* شغل فاخر م الاخر */
+:root{
+    --width:40px;
+}
+.testimonals .container .testimonal .testimonal-box{
+    margin-top: calc(var(--width) /1.5);
+    padding:1rem;
+    margin-bottom:4rem;
+    
+}
+.testimonals .container .testimonal .testimonal-box p{
+    margin:0;
+}
+.testimonals .container .testimonal .testimonal-box::before{
+    content: "";
+    width: var(--width);
+    height: var(--width);
+    background : linear-gradient(135deg, transparent, var(--color-bg2) ,var(--color-bg2),var(--color-bg2));
+    position:absolute;
+    left:calc(50% - var(--width) / 2 ) ;
+    /* after rotate top 10 px  */
+    top : calc(-1 *var(--width) / 2 );
+    top : calc(-1 *var(--width) / 2 );
+    /* transform:translate(-50%,0) ; */
+    transform: rotate(45deg);
+    z-index: -1;
+
+}
+.swiper {
+    max-width: 700px;
+    min-width:100px
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    /* bottom: -12px; */
+}
+/*=========== start footer========== */
+footer{
+    background-color: var(--color-bg1);
+    padding-top:3rem;
+    padding-bottom: 2rem;
+}
+footer .container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns:repeat(4,1fr);
+}
+footer .container p{
+    margin-bottom: 0;
+   
+}
+footer .container div *:not(h3){
+    text-align: center;
+    display: block;
+} 
+footer .container div{
+    /* margin-left: 30px; */
+}
+/*============= end footer ============*/
