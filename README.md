@@ -94,3 +94,4 @@ faq.forEach ( faq => {
 })
 ```
 ## run 
+![alt text](image.png)
